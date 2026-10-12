@@ -2,6 +2,7 @@ import { priceRound } from "../utils/priceRound.js";
 import { calculateDiscount } from "../utils/discountCalculator.js";
 import { calculateTax } from "../utils/taxCalculator.js";
 
+//Product Info interface
 export interface ProductInfo {
   id: number;
   title: string;
@@ -12,6 +13,7 @@ export interface ProductInfo {
   sku: string;
 }
 
+//Product class with methods for price with discount, tax rate, total cost, and display details.
 export class Product {
   id: number;
   title: string;
@@ -49,7 +51,7 @@ export class Product {
       ["Category", this.category],
       ["SKU", this.sku],
       ["Price", priceRound(this.price)],
-      ["Discount", priceRound(this.discountPercentage)+"%"],
+      ["Discount", this.discountPercentage+"%"],
       ["Tax", priceRound(this.getTax())],
       ["Total", priceRound(this.getTotal())],
     ];

@@ -1,6 +1,7 @@
 import { Product, type ProductInfo } from "./models/Product.js";
 import { fetchProductsArray } from "./services/apiService.js";
 
+//Fetches 5 products and displays the details for each
 const onStartup = async () => {
     try {
         const productInfo:ProductInfo[] = await fetchProductsArray(5);
