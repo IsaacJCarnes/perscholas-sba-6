@@ -1,0 +1,6 @@
+- How you implemented TypeScript features and OOP principles.
+ - Using classes and interfaces allowed for me to easily create functions with this information linked in editor.
+- The challenges you encountered and how you overcame them.
+ - When displaying the information after calculating tax or discount, it would sometimes go past the hundreths place. And if it was a clean number that extends past the tenth digit (ex 0.3000 or 12.40) it would get cutoff and only display up to the tenth place and nothing after. Implementing priceRound fixed both of these issues, making sure numbers like 12.3 and 12.302 both get changed to a string of 12.30. This method is only used in Product.displayDetails so that this does not affect the actual numbers/price and only the representation of them.
+- How you handled asynchronous operations and error management.
+ - I made sure that each asynchronious operation called (except for the one in main) throws its error instead of logging it so that the erros get routed back to the base function calling everything. onStartup gets the final error and logs it.
